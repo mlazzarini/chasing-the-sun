@@ -1,0 +1,8 @@
+.next
+out
+.github
+.vscode
+.yarn
+node_modules
+next-env.d.ts
+package.json
