@@ -1,27 +1,49 @@
 {
   "name": "sandy-feet",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint --max-warnings 0 --report-unused-disable-directives --ignore-path .gitignore \"**/*.+(ts|js|tsx|jsx)\"",
+    "type-check": "tsc",
+    "type-check:watch": "tsc --watch",
+    "pre-build-check": "yarn lint && yarn type-check"
+  },
+  "engines": {
+    "node": "20.10.0"
+  },
+  "engineStrict": true,
+  "volta": {
+    "node": "20.10.0"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write"
+    ],
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --max-warnings 0 --report-unused-disable-directives --ignore-path .gitignore --fix --plugin tsc --rule 'tsc/config: [2, {configFile: \"./tsconfig.json\"}]'"
+    ]
   },
   "dependencies": {
+    "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.0"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
-  }
+    "eslint-config-next": "14.1.0",
+    "eslint-config-prettier": "^9.1.0",
+    "lint-staged": "^15.2.0",
+    "postcss": "^8",
+    "prettier": "^3.2.4",
+    "tailwindcss": "^3.3.0",
+    "typescript": "^5"
+  },
+  "packageManager": "yarn@4.0.2"
 }
