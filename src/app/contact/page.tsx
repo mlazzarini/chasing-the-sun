@@ -1,7 +1,7 @@
-export default function About() {
+export default function Contact() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      I am the about page
+      I am the contacts page
     </main>
   )
 }
