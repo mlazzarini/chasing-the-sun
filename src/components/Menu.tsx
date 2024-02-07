@@ -5,19 +5,19 @@ import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
-  NavigationMenuTrigger,
-  NavigationMenuContent,
-  NavigationMenuLink,
 } from './ui/navigation-menu'
+import { amaticSC } from '../app/styles/fonts'
 
 export default function Menu() {
   return (
     <NavigationMenu>
       <NavigationMenuList>
-        <NavigationMenuItem>
+        <NavigationMenuItem
+          className={`${amaticSC.className} text-3xl font-bold p-1 text-[#FF4E50] hover:text-white`}>
           <Link href="/about">About</Link>
         </NavigationMenuItem>
-        <NavigationMenuItem>
+        <NavigationMenuItem
+          className={`${amaticSC.className} text-3xl font-bold p-1 text-[#FF4E50] hover:text-white`}>
           <Link href="/contact">Contact</Link>
         </NavigationMenuItem>
       </NavigationMenuList>
