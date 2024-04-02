@@ -2151,6 +2151,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chasing-the-sun@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "chasing-the-sun@workspace:."
+  dependencies:
+    "@radix-ui/react-dialog": "npm:^1.0.5"
+    "@radix-ui/react-navigation-menu": "npm:^1.1.4"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    autoprefixer: "npm:^10.4.17"
+    class-variance-authority: "npm:^0.7.0"
+    clsx: "npm:^2.1.0"
+    contentlayer: "npm:^0.3.4"
+    date-fns: "npm:^3.3.1"
+    eslint: "npm:^8"
+    eslint-config-next: "npm:14.1.0"
+    eslint-config-prettier: "npm:^9.1.0"
+    lint-staged: "npm:^15.2.0"
+    lucide-react: "npm:^0.314.0"
+    next: "npm:14.1.0"
+    next-contentlayer: "npm:^0.3.4"
+    postcss: "npm:^8.4.33"
+    prettier: "npm:^3.2.4"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    tailwind-merge: "npm:^2.2.1"
+    tailwindcss: "npm:^3.4.1"
+    tailwindcss-animate: "npm:^1.0.7"
+    typescript: "npm:^5"
+  languageName: unknown
+  linkType: soft
+
 "chokidar@npm:^3.5.3":
   version: 3.5.3
   resolution: "chokidar@npm:3.5.3"
@@ -6399,38 +6431,6 @@ __metadata:
   checksum: 10c0/7e3c8b2e88a1841c9671094bbaeebd94448111dd90a81a1f606f3f67708a6ec57763b3b47f06da09fc6054193e0e6709e77325415dc8422b04497a8070fa02d4
   languageName: node
   linkType: hard
-
-"sandy-feet@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "sandy-feet@workspace:."
-  dependencies:
-    "@radix-ui/react-dialog": "npm:^1.0.5"
-    "@radix-ui/react-navigation-menu": "npm:^1.1.4"
-    "@types/node": "npm:^20"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    autoprefixer: "npm:^10.4.17"
-    class-variance-authority: "npm:^0.7.0"
-    clsx: "npm:^2.1.0"
-    contentlayer: "npm:^0.3.4"
-    date-fns: "npm:^3.3.1"
-    eslint: "npm:^8"
-    eslint-config-next: "npm:14.1.0"
-    eslint-config-prettier: "npm:^9.1.0"
-    lint-staged: "npm:^15.2.0"
-    lucide-react: "npm:^0.314.0"
-    next: "npm:14.1.0"
-    next-contentlayer: "npm:^0.3.4"
-    postcss: "npm:^8.4.33"
-    prettier: "npm:^3.2.4"
-    react: "npm:^18"
-    react-dom: "npm:^18"
-    tailwind-merge: "npm:^2.2.1"
-    tailwindcss: "npm:^3.4.1"
-    tailwindcss-animate: "npm:^1.0.7"
-    typescript: "npm:^5"
-  languageName: unknown
-  linkType: soft
 
 "scheduler@npm:^0.23.0":
   version: 0.23.0
