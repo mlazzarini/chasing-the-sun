@@ -11,6 +11,9 @@
     "type-check:watch": "tsc --watch",
     "pre-build-check": "yarn lint && yarn type-check"
   },
+  "engines": {
+    "node": "20.10.0"
+  },
   "engineStrict": true,
   "volta": {
     "node": "20.10.0"
