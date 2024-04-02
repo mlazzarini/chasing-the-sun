@@ -1,16 +1,12 @@
+import MainWrapper from '@/components/MainWrapper'
 import NextImage from 'next/image'
-import picture from '/public/images/about-us.png'
 import { FunctionComponent } from 'react'
-import { amaticSC } from '../styles/fonts'
+import picture from '/public/images/about-us.png'
 
 const About: FunctionComponent = () => {
   return (
-    <main className="lg:w-3/4 md:w-4/5 sm:w-4/5 mx-auto max-w-screen-md flex min-h-screen flex-col items-center p-8">
-      <div
-        className={`${amaticSC.className} text-center font-bold text-4xl text-[#FF4E50]`}>
-        About us
-      </div>
-      <div className="m-8 flex justify-center">
+    <MainWrapper title="About us">
+      <div className="mb-8 flex justify-center">
         <NextImage src={picture} alt="About us" width={800} />
       </div>
       <p>
@@ -30,7 +26,7 @@ const About: FunctionComponent = () => {
         work, so we picked (some) countries around the world that we always
         wanted to visit, and we’ll try to explore as much as possible.
       </p>
-    </main>
+    </MainWrapper>
   )
 }
 
