@@ -11,14 +11,18 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <WorldMap />
-      <h1
-        className={`${amaticSC.className} mb-8 text-center font-bold text-4xl text-[#FF4E50]`}>
-        Latest blog posts
-      </h1>
-      {posts.map((post, idx) => (
-        <PostTeaser key={idx} {...post} />
-      ))}
+      <div className="self-stretch bg-gradient-to-r from-[#FF4E50]/[.7] to-[#F9D423]/[.7]">
+        <WorldMap />
+      </div>
+      <div>
+        <h1
+          className={`${amaticSC.className} mb-8 text-center font-bold text-4xl text-[#FF4E50]`}>
+          Latest blog posts
+        </h1>
+        {posts.map((post, idx) => (
+          <PostTeaser key={idx} {...post} />
+        ))}
+      </div>
     </main>
   )
 }
