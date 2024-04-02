@@ -5,13 +5,13 @@ import { amaticSC } from '../styles/fonts'
 
 const About: FunctionComponent = () => {
   return (
-    <main className="lg:w-3/4 md:w-4/5 sm:w-4/5 mx-auto flex min-h-screen flex-col items-center p-8">
+    <main className="lg:w-3/4 md:w-4/5 sm:w-4/5 mx-auto max-w-screen-md flex min-h-screen flex-col items-center p-8">
       <div
         className={`${amaticSC.className} text-center font-bold text-4xl text-[#FF4E50]`}>
         About us
       </div>
-      <div className="lg:w-4/5 md:w-4/5 sm:w-4/5 m-8">
-        <NextImage src={picture} alt="About us" />
+      <div className="m-8 flex justify-center">
+        <NextImage src={picture} alt="About us" width={800} />
       </div>
       <p>
         Hi! We are Margherita and Fabio. We decided to leave our jobs for one
