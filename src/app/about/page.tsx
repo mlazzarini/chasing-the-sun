@@ -1,7 +1,7 @@
 import MainWrapper from '@/components/MainWrapper'
 import NextImage from 'next/image'
 import { FunctionComponent } from 'react'
-import picture from '/public/images/about-us.png'
+import picture from '/public/images/about-us.jpg'
 
 const About: FunctionComponent = () => {
   return (
