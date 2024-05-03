@@ -9,17 +9,13 @@ export default function PostTeaser(post: Post) {
       <h2 className="mb-1 text-xl">
         <Link
           href={post.url}
-          className={`${amaticSC.className} font-bold text-2xl`}>
+          className={`${amaticSC.className} font-bold text-2xl underline hover:text-[#FF4E50]`}>
           {post.title}
         </Link>
       </h2>
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
         {format(parseISO(post.date), 'LLLL d, yyyy')}
       </time>
-      <div
-        className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0"
-        dangerouslySetInnerHTML={{ __html: post.body.raw.slice(0, 200) }}
-      />
     </div>
   )
 }
