@@ -3,9 +3,15 @@ import MainWrapper from '@/components/MainWrapper'
 import type { MDXComponents } from 'mdx/types'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from '@/components/Image'
+import BeautyLink from '@/components/BeautyLink'
 
 const mdxComponents: MDXComponents = {
   ImageComponent: ({ src, alt }) => <Image src={src} alt={alt} />,
+  LinkComponent: ({ href, text }) => (
+    <BeautyLink href={href} className={''}>
+      {text}
+    </BeautyLink>
+  ),
 }
 
 export const generateStaticParams = async () =>
