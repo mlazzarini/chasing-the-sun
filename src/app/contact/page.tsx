@@ -12,13 +12,20 @@ const Contact: FunctionComponent = () => {
       </p>
       <br />
       <div className="mb-8 flex flex-col items-center">
+        <BeautyLink
+          className="mb-4"
+          href="https://www.instagram.com/megghy1989/">
+          Instagram
+        </BeautyLink>
         <strong className="block mb-2">Linkedin profiles:</strong>
         <BeautyLink
           className="mb-2"
           href="https://www.linkedin.com/in/mlazzarini23/">
           Margherita
         </BeautyLink>
-        <BeautyLink href="https://www.linkedin.com/in/fabio-portmann-72b784249/">
+        <BeautyLink
+          className="mb-4"
+          href="https://www.linkedin.com/in/fabio-portmann-72b784249/">
           Fabio
         </BeautyLink>
       </div>
