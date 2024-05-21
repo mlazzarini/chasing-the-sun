@@ -1,10 +1,8 @@
-import WorldMap from '@/components/WorldMap'
 import PostTeaser from '@/components/PostTeaser'
+import WorldMap from '@/components/WorldMap'
 import { allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
 import { amaticSC } from '../app/styles/fonts'
-import Countdown from '@/components/Countdown'
-import { useMemo } from 'react'
 
 export default function Home() {
   const posts = allPosts.sort((a, b) =>
