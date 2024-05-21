@@ -12,6 +12,7 @@ const mdxComponents: MDXComponents = {
       {text}
     </BeautyLink>
   ),
+  BigSpace: () => <div className="h-6"></div>,
 }
 
 export const generateStaticParams = async () =>
