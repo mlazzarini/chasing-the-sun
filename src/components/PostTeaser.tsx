@@ -6,7 +6,7 @@ import Thumbnail from './Thumbnail'
 
 export default function PostTeaser(post: Post) {
   return (
-    <div className="mb-8  flex flex-row">
+    <div className="mb-4 flex flex-row">
       <Thumbnail
         className="mr-2 self-center"
         src={post.thumbnail}

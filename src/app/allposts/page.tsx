@@ -4,8 +4,8 @@ import MainWrapper from '@/components/MainWrapper'
 import { FunctionComponent, useCallback, useEffect, useState } from 'react'
 import { Post, allPosts } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
-import PostTeaser from '@/components/PostTeaser'
 import FilterByCountry from '@/components/FilterByCountry'
+import PostsChunks from '@/components/PostsChunks'
 
 const AllPosts: FunctionComponent = () => {
   const [selectedCountries, setSelectedCountries] = useState<string[]>([])
@@ -43,9 +43,7 @@ const AllPosts: FunctionComponent = () => {
         toggleCountry={toggleCountry}
         selectedCountries={selectedCountries}
       />
-      {filteredPosts.map((post, idx) => (
-        <PostTeaser key={idx} {...post} />
-      ))}
+      <PostsChunks posts={filteredPosts} />
     </MainWrapper>
   )
 }

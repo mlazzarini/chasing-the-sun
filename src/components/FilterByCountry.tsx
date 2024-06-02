@@ -15,7 +15,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
   selectedCountries,
 }) => {
   return (
-    <div className="flex items-center justify-center self-start m-2">
+    <div className="flex items-center justify-center self-start m-2 mb-8">
       <span className="mx-1">Filter:</span>
       <SelectableButton
         countryName="colombia"
