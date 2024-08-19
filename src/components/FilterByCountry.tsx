@@ -63,6 +63,32 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
+      <Image
+        className="size-3 rotate-150 m-1"
+        priority
+        src={planeIcon}
+        alt="plane icon"
+      />
+      <SelectableButton
+        countryName="singapore"
+        text="Singapore"
+        emoji="🇸🇬"
+        selectedCountries={selectedCountries}
+        toggleCountry={toggleCountry}
+      />
+      <Image
+        className="size-3 rotate-150 m-1"
+        priority
+        src={planeIcon}
+        alt="plane icon"
+      />
+      <SelectableButton
+        countryName="indonesia"
+        text="Indonesia"
+        emoji="🇮🇩"
+        selectedCountries={selectedCountries}
+        toggleCountry={toggleCountry}
+      />
     </div>
   )
 }
