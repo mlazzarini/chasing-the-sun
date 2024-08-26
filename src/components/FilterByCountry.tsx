@@ -1,8 +1,7 @@
 'use client'
 
-import React, { FunctionComponent } from 'react'
-import planeIcon from '../../public/plane.svg'
-import Image from 'next/image'
+import { FunctionComponent } from 'react'
+import FiltersDivider from './FiltersDivider'
 import SelectableButton from './SelectableButton'
 
 interface FilterByCountryProps {
@@ -24,12 +23,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
-      <Image
-        className="size-3 rotate-150 m-1"
-        priority
-        src={planeIcon}
-        alt="plane icon"
-      />
+      <FiltersDivider />
       <SelectableButton
         countryName="mexico"
         text="Mexico"
@@ -37,12 +31,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
-      <Image
-        className="size-3 rotate-150 m-1"
-        priority
-        src={planeIcon}
-        alt="plane icon"
-      />
+      <FiltersDivider />
       <SelectableButton
         countryName="usa"
         text="USA"
@@ -50,12 +39,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
-      <Image
-        className="size-3 rotate-150 m-1"
-        priority
-        src={planeIcon}
-        alt="plane icon"
-      />
+      <FiltersDivider />
       <SelectableButton
         countryName="japan"
         text="Japan"
@@ -63,12 +47,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
-      <Image
-        className="size-3 rotate-150 m-1"
-        priority
-        src={planeIcon}
-        alt="plane icon"
-      />
+      <FiltersDivider />
       <SelectableButton
         countryName="singapore"
         text="Singapore"
@@ -76,12 +55,7 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
-      <Image
-        className="size-3 rotate-150 m-1"
-        priority
-        src={planeIcon}
-        alt="plane icon"
-      />
+      <FiltersDivider />
       <SelectableButton
         countryName="indonesia"
         text="Indonesia"
