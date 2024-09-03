@@ -3,7 +3,6 @@ import { Button } from './ui/button'
 
 interface SelectableButtonProps {
   countryName: string
-  text: string
   toggleCountry: (country: string) => void
   emoji: string
   selectedCountries: string[]
@@ -11,7 +10,6 @@ interface SelectableButtonProps {
 
 const SelectableButton: FunctionComponent<SelectableButtonProps> = ({
   countryName,
-  text,
   emoji,
   toggleCountry,
   selectedCountries,
@@ -27,11 +25,10 @@ const SelectableButton: FunctionComponent<SelectableButtonProps> = ({
       onClick={() => {
         toggleCountry(countryName)
       }}>
-      {text}
+      {countryName.charAt(0).toUpperCase() + countryName.slice(1)}
       {selected ? ' ✔️' : ` ${emoji}`}
     </Button>
   )
 }
 
 export default SelectableButton
-//border-${selected ? '1' : '2'}

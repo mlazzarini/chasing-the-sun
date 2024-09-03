@@ -18,7 +18,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <span className="mx-1">Filter:</span>
       <SelectableButton
         countryName="colombia"
-        text="Colombia"
         emoji="🇨🇴"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
@@ -26,7 +25,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <FiltersDivider />
       <SelectableButton
         countryName="mexico"
-        text="Mexico"
         emoji="🇲🇽"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
@@ -34,7 +32,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <FiltersDivider />
       <SelectableButton
         countryName="usa"
-        text="USA"
         emoji="🇺🇸"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
@@ -42,7 +39,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <FiltersDivider />
       <SelectableButton
         countryName="japan"
-        text="Japan"
         emoji="🇯🇵"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
@@ -50,7 +46,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <FiltersDivider />
       <SelectableButton
         countryName="singapore"
-        text="Singapore"
         emoji="🇸🇬"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
@@ -58,7 +53,6 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
       <FiltersDivider />
       <SelectableButton
         countryName="indonesia"
-        text="Indonesia"
         emoji="🇮🇩"
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
