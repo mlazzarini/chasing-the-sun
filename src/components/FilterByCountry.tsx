@@ -57,6 +57,13 @@ const FilterByCountry: FunctionComponent<FilterByCountryProps> = ({
         selectedCountries={selectedCountries}
         toggleCountry={toggleCountry}
       />
+      <FiltersDivider />
+      <SelectableButton
+        countryName="vietnam"
+        emoji="🇻🇳"
+        selectedCountries={selectedCountries}
+        toggleCountry={toggleCountry}
+      />
     </div>
   )
 }
