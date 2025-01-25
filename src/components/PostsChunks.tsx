@@ -9,29 +9,45 @@ interface PostsChunksProps {
   posts: Post[]
 }
 
+interface PostCountry {
+  country: string
+  part?: number
+}
+
 const PostsChunks: FunctionComponent<PostsChunksProps> = ({ posts }) => {
-  const [countries, setCountries] = useState<string[]>([])
+  const [postCountries, setPostCountries] = useState<PostCountry[]>([])
 
   useEffect(() => {
-    const uniqueCountries: string[] = []
+    const uniqueCountries: PostCountry[] = []
     for (const item of posts) {
-      if (!uniqueCountries.includes(item.country)) {
-        uniqueCountries.push(item.country)
+      const lastCountryInserted =
+        uniqueCountries.length > 1 ? uniqueCountries.at(-1)?.country : ''
+      if (item.country !== lastCountryInserted) {
+        uniqueCountries.push(
+          !item.part
+            ? { country: item.country }
+            : { country: item.country, part: item.part }
+        )
       }
     }
-    setCountries(uniqueCountries)
+    setPostCountries(uniqueCountries)
   }, [posts])
 
   return (
     <>
-      {countries.map((country) => (
-        <div className="w-full flex flex-col items-center" key={country}>
+      {postCountries.map(({ country, part }) => (
+        <div
+          className="w-full flex flex-col items-center"
+          key={`${country}-${part}`}>
           <div
             className={`${amaticSC.className} font-bold text-3xl pr-1 pl-1 text-[#FF4E50] border-b-2 border-[#FF4E50] self-start w-full mb-6 pb-2`}>
-            {country}
+            {`${country} ${!!part ? `- Part ${part}` : ''}`}
           </div>
           {posts
-            .filter((post) => post.country === country)
+            .filter(
+              (post) =>
+                post.country === country && (post.part === part || !post.part)
+            )
             .map((post, idx) => (
               <PostTeaser key={idx} {...post} />
             ))}
