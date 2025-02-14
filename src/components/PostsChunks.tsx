@@ -9,33 +9,52 @@ interface PostsChunksProps {
   posts: Post[]
 }
 
-interface PostCountry {
+interface PostChunk {
   country: string
   part?: number
 }
 
 const PostsChunks: FunctionComponent<PostsChunksProps> = ({ posts }) => {
-  const [postCountries, setPostCountries] = useState<PostCountry[]>([])
+  const [postChunks, setPostChunks] = useState<PostChunk[]>([])
 
   useEffect(() => {
-    const uniqueCountries: PostCountry[] = []
-    for (const item of posts) {
-      const lastCountryInserted =
-        uniqueCountries.length > 1 ? uniqueCountries.at(-1)?.country : ''
-      if (item.country !== lastCountryInserted) {
-        uniqueCountries.push(
-          !item.part
-            ? { country: item.country }
-            : { country: item.country, part: item.part }
+    const chunks: PostChunk[] = []
+    for (const post of posts) {
+      if (chunks.length === 0) {
+        chunks.push(
+          !post.part
+            ? { country: post.country }
+            : { country: post.country, part: post.part }
         )
+      } else {
+        const chunksWithSameCountry = chunks.filter(
+          (chunk) => chunk.country === post.country
+        )
+
+        const isACountryWithoutPart = post.part === 0
+
+        const hasAnewPart = chunksWithSameCountry.every(
+          (chunkWithSameCountry) => chunkWithSameCountry.part !== post.part
+        )
+
+        if (
+          (isACountryWithoutPart && chunksWithSameCountry.length === 0) ||
+          (!isACountryWithoutPart && hasAnewPart)
+        ) {
+          chunks.push(
+            !post.part
+              ? { country: post.country }
+              : { country: post.country, part: post.part }
+          )
+        }
       }
     }
-    setPostCountries(uniqueCountries)
+    setPostChunks(chunks)
   }, [posts])
 
   return (
     <>
-      {postCountries.map(({ country, part }) => (
+      {postChunks.map(({ country, part }) => (
         <div
           className="w-full flex flex-col items-center"
           key={`${country}-${part}`}>
