@@ -1,4 +1,3 @@
-
 name: Test manual trigger
 
 on:
@@ -20,16 +19,16 @@ on:
 
 jobs:
   process-number:
-  runs-on: ubuntu-latest
-  steps:
-    - run: |
-        echo "Selected PR number: $PR_NUMBER"
-        if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
-          echo "Error: PR number is not a valid number"
-          exit 1
-        fi
-      env:
-        PR_NUMBER: ${{ inputs.prNumber }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Selected PR number: $PR_NUMBER"
+          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "Error: PR number is not a valid number"
+            exit 1
+          fi
+        env:
+          PR_NUMBER: ${{ inputs.prNumber }}
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
