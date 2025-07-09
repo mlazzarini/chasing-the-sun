@@ -1,0 +1,40 @@
+
+name: Test manual trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      prNumber:
+        description: PR number to point to
+        required: true
+        type: string
+      logLevel:
+        description: 'Log level'
+        required: false
+        default: 'warning'
+        type: choice
+        options:
+        - info
+        - warning
+        - debug
+
+jobs:
+  process-number:
+  runs-on: ubuntu-latest
+  steps:
+    - run: |
+        echo "Selected PR number: $PR_NUMBER"
+        if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+          echo "Error: PR number is not a valid number"
+          exit 1
+        fi
+      env:
+        PR_NUMBER: ${{ inputs.prNumber }}
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Log level: $LEVEL"
+          echo "Building against this PR number: $PR_NUMBER"
+        env:
+          LEVEL: ${{ inputs.logLevel }}
