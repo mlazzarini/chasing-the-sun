@@ -35,5 +35,6 @@ jobs:
       - run: |
           echo "Log level: $LEVEL"
           echo "Building against this PR number: $PR_NUMBER"
+          echo "Commit sha test: ${{ github.sha }}"
         env:
           LEVEL: ${{ inputs.logLevel }}
