@@ -3,38 +3,16 @@ name: Test manual trigger
 on:
   workflow_dispatch:
     inputs:
-      prNumber:
-        description: PR number to point to
-        required: true
-        type: string
-      logLevel:
-        description: 'Log level'
+      commitSha:
+        description: Commit SHA
         required: false
-        default: 'warning'
-        type: choice
-        options:
-        - info
-        - warning
-        - debug
+        type: string
 
 jobs:
-  process-number:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "Selected PR number: $PR_NUMBER"
-          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
-            echo "Error: PR number is not a valid number"
-            exit 1
-          fi
-        env:
-          PR_NUMBER: ${{ inputs.prNumber }}
   log-the-inputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Log level: $LEVEL"
-          echo "Building against this PR number: $PR_NUMBER"
-          echo "Commit sha test: ${{ github.sha }}"
-        env:
-          LEVEL: ${{ inputs.logLevel }}
+          echo "Commit SHA selected: ${{github.event.inputs.commitSha}}"
+          echo "Branch selected: ${{github.event.inputs.ref}}"
+          echo "One or the other: ${{github.event.inputs.ref || github.event.inputs.commitSha}}"
