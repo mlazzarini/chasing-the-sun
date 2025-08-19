@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "Commit SHA selected: ${{github.event.inputs.commitSha}}"
-          echo "Branch selected: ${{github.event.inputs.ref}}"
-          echo "One or the other: ${{github.event.inputs.ref || github.event.inputs.commitSha}}"
+          echo "Commit SHA selected: $COMMIT_SHA"
+          echo "Branch selected: ${{github.ref}}"
+        env:
+          COMMIT_SHA: ${{ inputs.commitSha }}
