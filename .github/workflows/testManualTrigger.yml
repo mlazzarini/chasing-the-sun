@@ -15,5 +15,6 @@ jobs:
       - run: |
           echo "Commit SHA selected: $COMMIT_SHA"
           echo "Branch selected: ${{github.ref}}"
+          echo "github.sha: ${{github.sha}}"
         env:
           COMMIT_SHA: ${{ inputs.commitSha }}
