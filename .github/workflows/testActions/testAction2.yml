@@ -1,0 +1,35 @@
+name: Test action 2
+
+on:
+  workflow_dispatch:
+    inputs:
+      commitSha:
+        description: Commit SHA
+        required: false
+        type: string
+
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Commit SHA selected: $COMMIT_SHA"
+          echo "Branch selected: ${{github.ref}}"
+          echo "github.sha: ${{github.sha}}"
+        env:
+          COMMIT_SHA: ${{ inputs.commitSha }}
+
+      - name: Validate input parameters
+        run: |
+          if [ -z "${{ inputs.commitSha }}" ]; then
+            echo "Using current commit SHA: ${{ github.sha }}"
+            echo "REF_TO_USE=${{ github.sha }}" >> $GITHUB_ENV
+          else
+            echo "Using provided commit SHA: ${{ inputs.commitSha }}"
+            echo "REF_TO_USE=${{ inputs.commitSha }}" >> $GITHUB_ENV
+          fi
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.REF_TO_USE }}
