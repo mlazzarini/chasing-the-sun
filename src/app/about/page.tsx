@@ -24,7 +24,7 @@ const About: FunctionComponent = () => {
       <p>
         Both in love with travelling, we decided that we needed a break from
         work, so we picked (some) countries around the world that we always
-        wanted to visit, and we’ll try to explore as much as possible.
+        wanted to visit, and we’ll try to explore as much as possible..
       </p>
     </MainWrapper>
   )
