@@ -26,6 +26,7 @@ jobs:
             echo "REF_TO_USE=${{ github.sha }}" >> $GITHUB_ENV
           else
             echo "Using provided commit SHA: ${{ inputs.commitSha }}"
+            echo "A test"
             echo "REF_TO_USE=${{ inputs.commitSha }}" >> $GITHUB_ENV
           fi
 
