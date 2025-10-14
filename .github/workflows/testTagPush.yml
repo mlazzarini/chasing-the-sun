@@ -1,0 +1,12 @@
+name: Test create tag trigger
+
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  log-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "I'm running!!!!!!!"
