@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo "I'm running!!!!!!!github ref: ${{ github.ref }}, github.sha: ${{ github.sha }}"
+          echo "I'm running!!!!!!!github ref: ${{ github.ref }}, github.ref_name: ${{ github.ref_name }}"
