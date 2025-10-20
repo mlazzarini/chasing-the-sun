@@ -1,0 +1,15 @@
+name: Test print release notes
+
+on:
+  release:
+    types: [published, edited]
+jobs:
+  log-something:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Release Notes Title: ${{ github.event.release.name }}"
+          echo "Release Notes Tag: ${{ github.event.release.tag_name }}"
+          echo "=================================================="
+          echo "${{ github.event.release.body }}"
+          echo "=================================================="
